@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>judiciarygold • Instagram</title>
+  <meta name="description" content="Judiciary Gold by Toprankers — Instagram profile clone." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23b8860b'/%3E%3Cpath d='M30 58l20-16 20 16M30 44l20-16 20 16' fill='none' stroke='%23fff8e1' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Left navigation rail -->
+    <nav class="sidebar" aria-label="Primary">
+      <a class="side-logo" href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <div class="side-links">
+        <button class="side-btn" data-tip="Home" aria-label="Home">
+          <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        </button>
+        <button class="side-btn" data-tip="Reels" aria-label="Reels">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 8h18M9 3l2.5 5M15 3l2.5 5"/><path d="M10 11.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button class="side-btn has-badge" data-count="6" data-tip="Messages" aria-label="Messages">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>
+        </button>
+        <button class="side-btn" data-tip="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        </button>
+        <button class="side-btn has-dot" data-tip="Notifications" aria-label="Notifications">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.2C1.6 8.1 3.4 4.5 7 4.5c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.6 0 5.4 3.6 4 7.3C19 16.5 12 21 12 21z"/></svg>
+        </button>
+        <button class="side-btn" data-tip="Create" aria-label="Create">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg>
+        </button>
+        <button class="side-btn side-avatar" data-tip="Profile" aria-label="Profile"><span></span></button>
+      </div>
+      <div class="side-bottom">
+        <button class="side-btn" data-tip="Menu" aria-label="More">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <button class="side-btn" data-tip="Dashboard" aria-label="Dashboard">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Profile -->
+    <main class="content">
+      <header class="profile" id="profile"><!-- built by app.js --></header>
+      <section class="highlights" id="highlights" aria-label="Story highlights"></section>
+      <nav class="tabs" id="tabs" aria-label="Profile content"></nav>
+      <section class="grid" id="grid" aria-label="Posts"></section>
+      <footer class="foot">
+        <p>This is a study/portfolio UI clone of an Instagram profile. Not affiliated with Instagram or Judiciary Gold.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Post modal -->
+  <div class="modal" id="modal" hidden>
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <button class="modal-nav prev" id="modalPrev" aria-label="Previous post">&#8249;</button>
+    <button class="modal-nav next" id="modalNext" aria-label="Next post">&#8250;</button>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Post">
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-side">
+        <div class="modal-head">
+          <span class="mini-avatar"></span>
+          <span class="mini-name">judiciarygold</span>
+          <span class="dot-sep">·</span>
+          <button class="mini-follow" id="modalFollow">Follow</button>
+          <button class="mini-more" id="modalMore" aria-label="More options">⋯</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-actions">
+          <div class="action-row">
+            <button class="act like-btn" id="modalLike" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.2C1.6 8.1 3.4 4.5 7 4.5c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.6 0 5.4 3.6 4 7.3C19 16.5 12 21 12 21z"/></svg>
+            </button>
+            <button class="act" id="modalCommentFocus" aria-label="Comment"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></button>
+            <button class="act" id="modalShare" aria-label="Share"><svg viewBox="0 0 24 24"><path d="M22 3 2 10l7 3 3 7z"/><path d="M9 13 22 3"/></svg></button>
+            <button class="act act-end save-btn" id="modalSave" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+          </div>
+          <div class="likes-count" id="modalLikes">0 likes</div>
+          <div class="posted-when" id="modalWhen"></div>
+          <div class="add-comment">
+            <input id="commentInput" type="text" placeholder="Add a comment…" aria-label="Add a comment" />
+            <button id="commentPost" disabled>Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
