@@ -266,17 +266,17 @@
         <div class="avatar-wrap">
           <button class="avatar-ring" id="avatarStory" aria-label="View story"><div class="avatar">${AVATAR_LOGO}</div></button>
         </div>
-        <div class="profile-info">
-          <div class="uname-row">
-            <span class="uname">${esc(p.username)}</span>
-            <button class="uname-more" id="unameMore" aria-label="Options">${ICON.verifiedMore}</button>
-          </div>
-          <div class="full-name">${esc(p.fullName)}</div>
-          <div class="stats">
-            <span class="n"><b>${esc(p.posts)}</b> posts</span>
-            <button class="n stat-btn" id="statFollowers"><b>${esc(p.followers)}</b> followers</button>
-            <button class="n stat-btn" id="statFollowing"><b>${esc(p.following)}</b> following</button>
-          </div>
+        <div class="uname-row">
+          <span class="uname">${esc(p.username)}</span>
+          <button class="uname-more" id="unameMore" aria-label="Options">${ICON.verifiedMore}</button>
+        </div>
+        <div class="full-name">${esc(p.fullName)}</div>
+        <div class="stats">
+          <span class="n"><b>${esc(p.posts)}</b> <span class="lbl">posts</span></span>
+          <button class="n stat-btn" id="statFollowers"><b>${esc(p.followers)}</b> <span class="lbl">followers</span></button>
+          <button class="n stat-btn" id="statFollowing"><b>${esc(p.following)}</b> <span class="lbl">following</span></button>
+        </div>
+        <div class="pi-details">
           <div class="category">${esc(p.category)}</div>
           <div class="bio" id="bio">
             ${p.bio.map((l) => esc(l)).join("<br>")}
