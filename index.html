@@ -3,102 +3,518 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>judiciarygold • Instagram</title>
-  <meta name="description" content="Judiciary Gold by Toprankers — Instagram profile clone." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23b8860b'/%3E%3Cpath d='M30 58l20-16 20 16M30 44l20-16 20 16' fill='none' stroke='%23fff8e1' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <title>Judiciary Gold by Toprankers — Crack Judiciary the #JGWay</title>
+  <meta name="description" content="Judiciary Gold by Toprankers — India's leading judiciary exam preparation. BPSC-J, RJS, HJS, MPCJ, DJS, UPPSCJ & more. Expert mentorship, proven results, online & offline batches. Book a free demo." />
+  <meta name="theme-color" content="#0d1b2a" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon (inline SVG scales of justice) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app">
-    <!-- Left navigation rail -->
-    <nav class="sidebar" aria-label="Primary">
-      <a class="side-logo" href="#" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/>
-        </svg>
+
+  <!-- ============ PROGRESS BAR ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" aria-label="Judiciary Gold home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18M7 21h10M12 3l-6 3 3 6a3 3 0 0 1-6 0l3-6M12 3l6 3-3 6a3 3 0 0 0 6 0l-3-6M4 6h16"/>
+          </svg>
+        </span>
+        <span class="brand__text">Judiciary<span class="brand__gold">Gold</span></span>
       </a>
-      <div class="side-links">
-        <button class="side-btn" data-tip="Home" aria-label="Home">
-          <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
-        </button>
-        <button class="side-btn" data-tip="Reels" aria-label="Reels">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 8h18M9 3l2.5 5M15 3l2.5 5"/><path d="M10 11.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
-        </button>
-        <button class="side-btn has-badge" data-count="6" data-tip="Messages" aria-label="Messages">
-          <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>
-        </button>
-        <button class="side-btn" data-tip="Search" aria-label="Search">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
-        </button>
-        <button class="side-btn has-dot" data-tip="Notifications" aria-label="Notifications">
-          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.2C1.6 8.1 3.4 4.5 7 4.5c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.6 0 5.4 3.6 4 7.3C19 16.5 12 21 12 21z"/></svg>
-        </button>
-        <button class="side-btn" data-tip="Create" aria-label="Create">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg>
-        </button>
-        <button class="side-btn side-avatar" data-tip="Profile" aria-label="Profile"><span></span></button>
-      </div>
-      <div class="side-bottom">
-        <button class="side-btn" data-tip="Menu" aria-label="More">
-          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-        <button class="side-btn" data-tip="Dashboard" aria-label="Dashboard">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
-        </button>
-      </div>
-    </nav>
 
-    <!-- Profile -->
-    <main class="content">
-      <header class="profile" id="profile"><!-- built by app.js --></header>
-      <section class="highlights" id="highlights" aria-label="Story highlights"></section>
-      <nav class="tabs" id="tabs" aria-label="Profile content"></nav>
-      <section class="grid" id="grid" aria-label="Posts"></section>
-      <footer class="foot">
-        <p>This is a study/portfolio UI clone of an Instagram profile. Not affiliated with Instagram or Judiciary Gold.</p>
-      </footer>
-    </main>
-  </div>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#courses">Courses</a>
+        <a href="#results">Results</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#videos">Videos</a>
+        <a href="#centres">Centres</a>
+        <a href="#enquire" class="btn btn--gold btn--sm nav__cta">Book Free Demo</a>
+      </nav>
 
-  <!-- Post modal -->
-  <div class="modal" id="modal" hidden>
-    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-    <button class="modal-nav prev" id="modalPrev" aria-label="Previous post">&#8249;</button>
-    <button class="modal-nav next" id="modalNext" aria-label="Next post">&#8250;</button>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Post">
-      <div class="modal-media" id="modalMedia"></div>
-      <div class="modal-side">
-        <div class="modal-head">
-          <span class="mini-avatar"></span>
-          <span class="mini-name">judiciarygold</span>
-          <span class="dot-sep">·</span>
-          <button class="mini-follow" id="modalFollow">Follow</button>
-          <button class="mini-more" id="modalMore" aria-label="More options">⋯</button>
-        </div>
-        <div class="modal-body" id="modalBody"></div>
-        <div class="modal-actions">
-          <div class="action-row">
-            <button class="act like-btn" id="modalLike" aria-label="Like">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.2C1.6 8.1 3.4 4.5 7 4.5c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.6 0 5.4 3.6 4 7.3C19 16.5 12 21 12 21z"/></svg>
-            </button>
-            <button class="act" id="modalCommentFocus" aria-label="Comment"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></button>
-            <button class="act" id="modalShare" aria-label="Share"><svg viewBox="0 0 24 24"><path d="M22 3 2 10l7 3 3 7z"/><path d="M9 13 22 3"/></svg></button>
-            <button class="act act-end save-btn" id="modalSave" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <video class="hero__video-bg" autoplay muted loop playsinline preload="auto" poster="assets/law-scales-books.jpg">
+          <source src="assets/clip.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__video-overlay"></div>
+        <div class="hero__blob hero__blob--1" data-parallax="0.18"></div>
+        <div class="hero__blob hero__blob--2" data-parallax="0.30"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="pill reveal" data-reveal>
+            <span class="pill__dot"></span> Leaders in Judiciary Preparation · Since 2018
+          </span>
+          <h1 class="hero__title reveal" data-reveal>
+            Crack Judiciary the
+            <span class="grad-gold">#JGWay</span>
+          </h1>
+          <p class="hero__sub reveal" data-reveal>
+            Start your judiciary journey with <strong>Judiciary Gold by Toprankers</strong> — expert mentorship,
+            court-tested strategy, and a rank-machine track record across BPSC-J, RJS, HJS, MPCJ, DJS &amp; more.
+          </p>
+          <div class="hero__cta reveal" data-reveal>
+            <a href="#enquire" class="btn btn--gold btn--lg">Book a Free Demo</a>
+            <a href="#courses" class="btn btn--ghost btn--lg">Explore Courses</a>
           </div>
-          <div class="likes-count" id="modalLikes">0 likes</div>
-          <div class="posted-when" id="modalWhen"></div>
-          <div class="add-comment">
-            <input id="commentInput" type="text" placeholder="Add a comment…" aria-label="Add a comment" />
-            <button id="commentPost" disabled>Post</button>
+
+          <div class="hero__trust reveal" data-reveal>
+            <div class="trust-avatars" aria-hidden="true">
+              <span>JG</span><span>RJS</span><span>BPSC</span><span>DJS</span>
+            </div>
+            <p><strong>1,09,000+ aspirants</strong> trust the JGWay across India</p>
           </div>
         </div>
+
+        <div class="hero__media reveal" data-reveal>
+          <button class="hero__video" data-video="rdijHCPMz1Q" aria-label="Play topper interview video">
+            <span class="hero__video-thumb" style="background-image:url('https://i.ytimg.com/vi/rdijHCPMz1Q/hqdefault.jpg')"></span>
+            <span class="hero__video-badge"><span class="live-dot"></span> Topper Interview</span>
+            <span class="video-play__btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+            </span>
+            <span class="hero__video-cap">CGPSC Civil Judge <strong>AIR&nbsp;2</strong> — how she cracked it</span>
+          </button>
+
+          <div class="hero__chip hero__chip--1 float" aria-hidden="true">
+            <span class="hero__chip-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0Z"/><path d="M17 5h2a2 2 0 0 1 0 4h-2M7 5H5a2 2 0 0 0 0 4h2"/></svg>
+            </span>
+            <span><strong>92+ Ranks</strong>State judiciary · 2024</span>
+          </div>
+          <div class="hero__chip hero__chip--2 float" aria-hidden="true">
+            <span class="hero__chip-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>
+            </span>
+            <span><strong>1.09L+</strong>Aspirants mentored</span>
+          </div>
+        </div>
       </div>
+
+      <a href="#stats" class="hero__scroll" aria-label="Scroll down">
+        <span class="mouse"><span></span></span>
+      </a>
+    </section>
+
+    <!-- ============ EXAM MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span>BPSC-J</span><span>·</span><span>RJS</span><span>·</span><span>HJS</span><span>·</span>
+        <span>MPCJ</span><span>·</span><span>DJS</span><span>·</span><span>UPPSCJ</span><span>·</span>
+        <span>CGPSC-J</span><span>·</span><span>Rajasthan APO</span><span>·</span><span>AIBE</span><span>·</span>
+      </div>
+    </div>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" id="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="count" data-target="109" data-suffix="K+">0</span></div>
+          <div class="stat__label">Aspirants Mentored</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="count" data-target="92" data-suffix="+">0</span></div>
+          <div class="stat__label">Ranks in 2024</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="count" data-target="24" data-suffix="+">0</span></div>
+          <div class="stat__label">Final Selections</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="count" data-target="5" data-suffix=" in Top 10">0</span></div>
+          <div class="stat__label">Across State Judiciary</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="count" data-target="7" data-suffix="+">0</span></div>
+          <div class="stat__label">Learning Centres</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COURSES ============ -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Courses &amp; Batches</span>
+          <h2 class="section__title">One exam. <span class="grad-gold">One dedicated batch.</span></h2>
+          <p class="section__lead">Structured Prelims-to-Interview programs for every major state judiciary exam — live classes, 30,000+ practice questions, mains answer writing &amp; personal mentorship.</p>
+        </div>
+
+        <div class="cards" id="coursesGrid" data-stagger>
+          <!-- Cards injected by script from EXAMS data; static fallback below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY JG ============ -->
+    <section class="section section--alt" id="why">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Why Judiciary Gold</span>
+          <h2 class="section__title">Everything you need to <span class="grad-gold">wear the robe.</span></h2>
+        </div>
+        <div class="features" data-stagger>
+          <article class="feature reveal" data-reveal>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg>
+            </div>
+            <h3>Expert Faculty</h3>
+            <p>Learn from mentors who've cracked the bench and trained hundreds of judges. Concept-first, exam-smart teaching.</p>
+          </article>
+          <article class="feature reveal" data-reveal>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+            <h3>Mains Answer Writing</h3>
+            <p>Weekly answer-writing with individual evaluation and model answers — the single biggest differentiator in mains.</p>
+          </article>
+          <article class="feature reveal" data-reveal>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+            </div>
+            <h3>30,000+ Questions</h3>
+            <p>200+ mock tests, PYQs and daily practice covering BSA, CPC, BNSS, BNS and the entire syllabus in Hindi &amp; English.</p>
+          </article>
+          <article class="feature reveal" data-reveal>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Online + Offline</h3>
+            <p>Study your way — live online classes or premium offline centres in Indore, Jaipur and more, with the same faculty.</p>
+          </article>
+          <article class="feature reveal" data-reveal>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+            </div>
+            <h3>Doubt Support</h3>
+            <p>Dedicated doubt-solving, mentor check-ins and a community that keeps you accountable through the long grind.</p>
+          </article>
+          <article class="feature reveal" data-reveal>
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18a3 3 0 0 1-3-3v-2a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3"/><path d="M6 14h12v8H6z"/></svg>
+            </div>
+            <h3>Interview Guidance</h3>
+            <p>Mock interviews, current-affairs drills and personality development to convert your mains rank into a selection.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section class="section results" id="results">
+      <div class="results__bg" data-parallax="0.12" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Results That Speak</span>
+          <h2 class="section__title"><span class="hindi">अद्भुत</span> results, year after year</h2>
+          <p class="section__lead">Consistency is the JGWay — rank after rank, selection after selection. Your name could be next.</p>
+        </div>
+
+        <div class="results__grid" data-stagger>
+          <article class="result-card reveal" data-reveal>
+            <span class="result-card__exam">BPSC-J 2024</span>
+            <span class="result-card__big">Top Ranks</span>
+            <span class="result-card__meta">Multiple selections across the merit list</span>
+          </article>
+          <article class="result-card reveal" data-reveal>
+            <span class="result-card__exam">RJS 2024</span>
+            <span class="result-card__big">Rankers</span>
+            <span class="result-card__meta">Prelims to interview, mentored end-to-end</span>
+          </article>
+          <article class="result-card reveal" data-reveal>
+            <span class="result-card__exam">CGPSC-J</span>
+            <span class="result-card__big">AIR 2</span>
+            <span class="result-card__meta">Shubhangi Jain &amp; many more toppers</span>
+          </article>
+          <article class="result-card reveal" data-reveal>
+            <span class="result-card__exam">HJS &amp; DJS</span>
+            <span class="result-card__big">92 Ranks</span>
+            <span class="result-card__meta">24 final selections in a single year</span>
+          </article>
+        </div>
+
+        <p class="results__foot reveal" data-reveal>…and many more across MPCJ, UPPSCJ &amp; Rajasthan APO. <a href="#enquire">Start your success story →</a></p>
+      </div>
+    </section>
+
+    <!-- ============ FACULTY ============ -->
+    <section class="section section--alt" id="faculty">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Know Your Faculties</span>
+          <h2 class="section__title">Mentors who've <span class="grad-gold">been there.</span></h2>
+        </div>
+        <div class="faculty" data-stagger>
+          <article class="mentor reveal" data-reveal>
+            <div class="mentor__avatar" style="--a:#c9a227;--b:#8a6d1a">CP</div>
+            <h3>Chinmay Pandey</h3>
+            <span class="mentor__role">Constitutional &amp; Substantive Law</span>
+            <p>Concept-driven teaching that turns dense bare acts into exam-ready clarity.</p>
+          </article>
+          <article class="mentor reveal" data-reveal>
+            <div class="mentor__avatar" style="--a:#3a7bd5;--b:#1e3c72">AY</div>
+            <h3>Ayush Sir</h3>
+            <span class="mentor__role">Procedural Laws — CPC, CrPC, BNSS</span>
+            <p>Answer-writing specialist known for structure, speed and scoring frameworks.</p>
+          </article>
+          <article class="mentor reveal" data-reveal>
+            <div class="mentor__avatar" style="--a:#16a085;--b:#0e6152">JG</div>
+            <h3>JG Core Team</h3>
+            <span class="mentor__role">Mentorship &amp; Strategy</span>
+            <p>Personal mentors who track your progress from day one to selection day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEOS ============ -->
+    <section class="section videos" id="videos">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Watch the JGWay</span>
+          <h2 class="section__title">Free classes, toppers &amp; <span class="grad-gold">real strategy.</span></h2>
+          <p class="section__lead">A glimpse of what learning at Judiciary Gold feels like — straight from our channel.</p>
+        </div>
+
+        <div class="video-featured reveal" data-reveal style="background-image:url('https://i.ytimg.com/vi/rdijHCPMz1Q/maxresdefault.jpg'), url('https://i.ytimg.com/vi/rdijHCPMz1Q/hqdefault.jpg')">
+          <button class="video-play" data-video="rdijHCPMz1Q" aria-label="Play topper interview video">
+            <span class="video-play__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span>
+            <span class="video-featured__tag">Topper Interview</span>
+            <span class="video-featured__title">CGPSC Civil Judge AIR 2 — Shubhangi Jain shares her strategy</span>
+          </button>
+        </div>
+
+        <div class="video-grid" data-stagger>
+          <button class="video-card reveal" data-reveal data-video="m49ULDkcs4k">
+            <span class="video-card__thumb" style="background-image:url('https://i.ytimg.com/vi/m49ULDkcs4k/hqdefault.jpg')"><span class="video-play__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span></span>
+            <span class="video-card__title">Judiciary Gold Shield Plan — skip the wait</span>
+          </button>
+          <button class="video-card reveal" data-reveal data-video="J3KqABj1ojQ">
+            <span class="video-card__thumb" style="background-image:url('https://i.ytimg.com/vi/J3KqABj1ojQ/hqdefault.jpg')"><span class="video-play__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span></span>
+            <span class="video-card__title">Subject-wise preparation, the right way</span>
+          </button>
+          <button class="video-card reveal" data-reveal data-video="JjqUWu5yiVU">
+            <span class="video-card__thumb" style="background-image:url('https://i.ytimg.com/vi/JjqUWu5yiVU/hqdefault.jpg')"><span class="video-play__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span></span>
+            <span class="video-card__title">Advanced Test Series for judiciary</span>
+          </button>
+          <button class="video-card reveal" data-reveal data-video="zjnUNHKYPAM">
+            <span class="video-card__thumb" style="background-image:url('https://i.ytimg.com/vi/zjnUNHKYPAM/hqdefault.jpg')"><span class="video-play__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span></span>
+            <span class="video-card__title">An important update for every aspirant</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CENTRES ============ -->
+    <section class="section section--alt" id="centres">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">7+ Centres Across India</span>
+          <h2 class="section__title">Prefer a <span class="grad-gold">classroom?</span> We're near you.</h2>
+        </div>
+        <div class="centres" data-stagger>
+          <article class="centre reveal" data-reveal>
+            <span class="centre__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Indore</h3>
+            <p>Flagship offline centre · 3 years of success</p>
+          </article>
+          <article class="centre reveal" data-reveal>
+            <span class="centre__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Jaipur</h3>
+            <p>Offline batches · enrolment open now</p>
+          </article>
+          <article class="centre reveal" data-reveal>
+            <span class="centre__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Bhopal</h3>
+            <p>MPCJ-focused classroom program</p>
+          </article>
+          <article class="centre reveal" data-reveal>
+            <span class="centre__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Patna</h3>
+            <p>BPSC-J classroom &amp; test centre</p>
+          </article>
+          <article class="centre reveal" data-reveal>
+            <span class="centre__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>
+            <h3>Online — Pan India</h3>
+            <p>Same faculty, live from anywhere in India</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section testi" id="testimonials">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Aspirant Voices</span>
+          <h2 class="section__title">Loved by the <span class="grad-gold">judiciary community.</span></h2>
+        </div>
+        <div class="testi__grid" data-stagger>
+          <figure class="quote reveal" data-reveal>
+            <blockquote>"This is exactly what I needed — the clarity in JG's classes is unmatched. JGWay never disappoints. 🔥"</blockquote>
+            <figcaption><span class="quote__av" style="--a:#c9a227">A</span> Aspirant, RJS 2024</figcaption>
+          </figure>
+          <figure class="quote reveal" data-reveal>
+            <blockquote>"The mains answer-writing program changed my game completely. Bookmarked every session — thank you team."</blockquote>
+            <figcaption><span class="quote__av" style="--a:#3a7bd5">S</span> Selected, BPSC-J</figcaption>
+          </figure>
+          <figure class="quote reveal" data-reveal>
+            <blockquote>"Consistent, honest mentorship. I shared it with my whole batch. Legends only. 👑"</blockquote>
+            <figcaption><span class="quote__av" style="--a:#16a085">R</span> Ranker, CGPSC-J</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WEBINAR BANNER ============ -->
+    <section class="webinar">
+      <div class="webinar__bg" data-parallax="0.15" aria-hidden="true"></div>
+      <div class="container webinar__inner reveal" data-reveal>
+        <div>
+          <span class="eyebrow eyebrow--light">Free Live Webinar</span>
+          <h2>Rajasthan APO 2026 — Strategy &amp; Selection Roadmap</h2>
+          <p>Join our senior faculty live. Limited seats · absolutely free.</p>
+        </div>
+        <a href="#enquire" class="btn btn--gold btn--lg">Reserve My Seat</a>
+      </div>
+    </section>
+
+    <!-- ============ ENQUIRY FORM ============ -->
+    <section class="section enquire" id="enquire">
+      <div class="container enquire__grid">
+        <div class="enquire__copy reveal" data-reveal>
+          <span class="eyebrow">Book a Free Demo</span>
+          <h2 class="section__title">Your judiciary journey <span class="grad-gold">starts today.</span></h2>
+          <p class="section__lead">Tell us your target exam and we'll set up a free counselling call + demo class with a mentor — no strings attached.</p>
+          <ul class="enquire__list">
+            <li>✓ Personalised batch recommendation</li>
+            <li>✓ Free demo class with senior faculty</li>
+            <li>✓ Scholarship &amp; fee guidance</li>
+          </ul>
+        </div>
+
+        <form class="enquire__form reveal" data-reveal id="enquiryForm" novalidate>
+          <div class="field">
+            <label for="f-name">Full Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Your name" required />
+            <span class="field__err" data-err></span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone Number</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="10-digit mobile" required inputmode="numeric" maxlength="10" />
+            <span class="field__err" data-err></span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="you@email.com" required />
+            <span class="field__err" data-err></span>
+          </div>
+          <div class="field">
+            <label for="f-exam">Target Exam</label>
+            <select id="f-exam" name="exam" required>
+              <option value="">Select an exam</option>
+              <option>BPSC-J (Bihar)</option>
+              <option>RJS (Rajasthan)</option>
+              <option>HJS (Haryana)</option>
+              <option>MPCJ (Madhya Pradesh)</option>
+              <option>DJS (Delhi)</option>
+              <option>UPPSCJ (Uttar Pradesh)</option>
+              <option>CGPSC-J (Chhattisgarh)</option>
+              <option>Rajasthan APO</option>
+              <option>AIBE</option>
+              <option>Not sure yet</option>
+            </select>
+            <span class="field__err" data-err></span>
+          </div>
+          <div class="field field--full">
+            <label for="f-msg">Message <span class="muted">(optional)</span></label>
+            <textarea id="f-msg" name="message" rows="3" placeholder="Anything you'd like us to know?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold btn--lg btn--block">Book My Free Demo</button>
+          <p class="form-success" id="formSuccess" hidden>🎉 Thank you! Our team will call you within 24 hours. Welcome to the JGWay.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M12 3l-6 3 3 6a3 3 0 0 1-6 0l3-6M12 3l6 3-3 6a3 3 0 0 0 6 0l-3-6M4 6h16"/></svg>
+          </span>
+          <span class="brand__text">Judiciary<span class="brand__gold">Gold</span></span>
+        </a>
+        <p>Leaders in Judiciary Preparation. Crack Judiciary the #JGWay — with mentorship, strategy and results that speak.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/judiciarygold/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@JudiciaryGold" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.76-1.77C19.28 5 12 5 12 5s-7.28 0-8.84.53A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.76 1.77C4.72 19 12 19 12 19s7.28 0 8.84-.53a2.5 2.5 0 0 0 1.76-1.77C23 15.2 23 12 23 12ZM9.75 15.27V8.73L15.5 12l-5.75 3.27Z"/></svg>
+          </a>
+          <a href="https://t.me/s/JudiciaryGold" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 18.7 19.4c-.24 1.08-.88 1.34-1.78.83l-4.92-3.63-2.37 2.29c-.27.26-.49.48-1 .48l.36-5.02 9.13-8.25c.4-.35-.09-.55-.62-.2L6.2 13.06l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57l19-7.32c.88-.33 1.65.2 1.38 1.65Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Courses</h4>
+        <a href="#courses">BPSC-J</a><a href="#courses">RJS</a><a href="#courses">MPCJ</a><a href="#courses">DJS</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#results">Results</a><a href="#faculty">Faculty</a><a href="#centres">Centres</a><a href="#videos">Videos</a>
+      </div>
+      <div class="footer__col">
+        <h4>Get in touch</h4>
+        <a href="#enquire">Book a Free Demo</a>
+        <a href="tel:+918000000000">+91 80000 00000</a>
+        <a href="mailto:hello@judiciarygold.com">hello@judiciarygold.com</a>
+      </div>
+    </div>
+    <div class="container footer__bar">
+      <p>© <span id="year"></span> Judiciary Gold by Toprankers. All rights reserved.</p>
+      <p class="muted">Mockup site built for demonstration purposes.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING MOBILE CTA ============ -->
+  <a href="#enquire" class="fab" id="fab">Enquire Now</a>
+
+  <!-- ============ VIDEO MODAL ============ -->
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-label="Video player">
+      <button class="modal__close" data-close aria-label="Close video">×</button>
+      <div class="modal__frame" id="modalFrame"></div>
     </div>
   </div>
 
-  <div class="toast" id="toast" hidden></div>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
