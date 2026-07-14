@@ -6,26 +6,68 @@
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* -------- Courses data -> cards -------- */
-  const EXAMS = [
-    { tag: "Bihar", name: "BPSC-J", full: "Bihar Judicial Services", desc: "Full Prelims-to-Interview program with Bihar-specific laws, PYQs and weekly mains answer writing." },
-    { tag: "Rajasthan", name: "RJS", full: "Rajasthan Judicial Services", desc: "Our flagship batch — Hindi + English medium, language paper focus and interview mentorship." },
-    { tag: "Haryana", name: "HJS", full: "Haryana Judicial Services", desc: "Targeted coverage of local acts, high-yield topics and full-length graded test series." },
-    { tag: "Madhya Pradesh", name: "MPCJ", full: "MP Civil Judge", desc: "Indore-tested classroom + online program with 200+ mocks and structured revision." },
-    { tag: "Delhi", name: "DJS", full: "Delhi Judicial Services", desc: "High-standard English medium prep, advanced answer writing and current-affairs drills." },
-    { tag: "Uttar Pradesh", name: "UPPSCJ", full: "UP Judicial Services", desc: "Complete syllabus in BSA, CPC, BNSS & BNS with dedicated doubt-solving support." },
+  /* -------- Courses data -> catalog cards -------- */
+  const ICON = {
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg>',
+    online: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0M8.5 16.1a6 6 0 0 1 7 0M2 8.82a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r=".5"/></svg>',
+    offline: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 9h.01M14 9h.01M10 13h.01M14 13h.01"/></svg>',
+    hybrid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>',
+  };
+
+  const COURSES = [
+    { tag: "Bihar", name: "BPSC-J", full: "Bihar Judicial Services · Prelims to Interview", mode: "online offline", modeLabel: "Online + Offline", duration: "12 months", lang: "Hindi + English", price: "₹49,999", badge: "Bestseller",
+      feats: ["600+ live + recorded classes", "Bihar bare acts, PYQs & test series", "Weekly mains answer writing"] },
+    { tag: "Rajasthan", name: "RJS", full: "Rajasthan Judicial Services · Full Course", mode: "online offline", modeLabel: "Online + Offline", duration: "12 months", lang: "Hindi + English", price: "₹52,999", badge: "Most Popular",
+      feats: ["Language paper (Hindi/English) focus", "Full-length graded mock tests", "1-on-1 interview mentorship"] },
+    { tag: "Haryana", name: "HJS", full: "Haryana Judicial Services · Live Batch", mode: "online", modeLabel: "Live Online", duration: "10 months", lang: "Hindi + English", price: "₹44,999",
+      feats: ["Live classes + lifetime recordings", "Haryana local acts covered", "Daily practice & doubt support"] },
+    { tag: "Madhya Pradesh", name: "MPCJ", full: "MP Civil Judge · Classroom", mode: "offline", modeLabel: "Classroom · Indore", duration: "12 months", lang: "Hindi + English", price: "₹54,999", badge: "Filling Fast",
+      feats: ["Indore & Bhopal classroom batches", "200+ mock tests included", "Structured revision cycles"] },
+    { tag: "Delhi", name: "DJS", full: "Delhi Judicial Services · Live Batch", mode: "online", modeLabel: "Live Online", duration: "11 months", lang: "English", price: "₹47,999",
+      feats: ["High-standard English-medium prep", "Advanced answer writing", "Current-affairs drills"] },
+    { tag: "Uttar Pradesh", name: "UPPSCJ", full: "UP Judicial Services · Live Batch", mode: "online", modeLabel: "Live Online", duration: "12 months", lang: "Hindi + English", price: "₹46,999",
+      feats: ["Full BSA, CPC, BNSS & BNS coverage", "30,000+ practice questions", "Dedicated doubt-solving"] },
   ];
+
+  function modeClass(mode) { return mode === "online offline" ? "hybrid" : mode; }
 
   const grid = document.getElementById("coursesGrid");
   if (grid) {
-    grid.innerHTML = EXAMS.map((e) => `
-      <article class="course reveal" data-reveal>
-        <span class="course__tag">${e.tag}</span>
-        <h3 class="course__name">${e.name}</h3>
-        <span class="course__full">${e.full}</span>
-        <p class="course__desc">${e.desc}</p>
-        <a href="#enquire" class="course__link">Enquire about this batch →</a>
-      </article>`).join("");
+    grid.innerHTML = COURSES.map((c) => {
+      const mc = modeClass(c.mode);
+      return `
+      <article class="course reveal" data-reveal data-mode="${c.mode}">
+        ${c.badge ? `<span class="course__ribbon">${c.badge}</span>` : ""}
+        <span class="course__tag">${c.tag}</span>
+        <h3 class="course__name">${c.name}</h3>
+        <span class="course__full">${c.full}</span>
+        <span class="course__mode course__mode--${mc}">${ICON[mc]} ${c.modeLabel}</span>
+        <ul class="course__feats">
+          ${c.feats.map((f) => `<li>${ICON.check}<span>${f}</span></li>`).join("")}
+        </ul>
+        <div class="course__meta">
+          <span>${ICON.clock} ${c.duration}</span>
+          <span>${ICON.globe} ${c.lang}</span>
+        </div>
+        <div class="course__foot">
+          <div class="course__price"><span class="course__price-label">Starts at</span><span class="course__price-val">${c.price}</span></div>
+          <a href="#enquire" class="btn btn--gold btn--sm">Enroll Now</a>
+        </div>
+      </article>`;
+    }).join("");
+
+    // filter tabs
+    const fbtns = document.querySelectorAll(".course-filter__btn");
+    fbtns.forEach((btn) => btn.addEventListener("click", () => {
+      const f = btn.dataset.filter;
+      fbtns.forEach((b) => { const on = b === btn; b.classList.toggle("is-active", on); b.setAttribute("aria-selected", String(on)); });
+      grid.querySelectorAll(".course").forEach((card) => {
+        const show = f === "all" || (card.dataset.mode || "").split(" ").indexOf(f) !== -1;
+        card.classList.toggle("course--hidden", !show);
+      });
+    }));
   }
 
   /* -------- Footer year -------- */

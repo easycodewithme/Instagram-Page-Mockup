@@ -158,13 +158,26 @@
       <div class="container">
         <div class="section__head reveal" data-reveal>
           <span class="eyebrow">Courses &amp; Batches</span>
-          <h2 class="section__title">One exam. <span class="grad-gold">One dedicated batch.</span></h2>
-          <p class="section__lead">Structured Prelims-to-Interview programs for every major state judiciary exam — live classes, 30,000+ practice questions, mains answer writing &amp; personal mentorship.</p>
+          <h2 class="section__title">Pick your exam. <span class="grad-gold">Learn online or on-campus.</span></h2>
+          <p class="section__lead">Complete Prelims-to-Interview programs for every major state judiciary exam — delivered as <strong>live online classes</strong>, premium classroom batches, or a hybrid of both. Live + recorded lectures, 30,000+ practice questions, mains answer writing &amp; personal mentorship.</p>
+        </div>
+
+        <div class="course-filter reveal" data-reveal role="tablist" aria-label="Filter courses by mode">
+          <button class="course-filter__btn is-active" data-filter="all" role="tab" aria-selected="true">All Courses</button>
+          <button class="course-filter__btn" data-filter="online" role="tab" aria-selected="false">
+            <span class="live-dot"></span> Live Online
+          </button>
+          <button class="course-filter__btn" data-filter="offline" role="tab" aria-selected="false">Classroom</button>
         </div>
 
         <div class="cards" id="coursesGrid" data-stagger>
-          <!-- Cards injected by script from EXAMS data; static fallback below -->
+          <!-- Cards injected by script from COURSES data -->
         </div>
+
+        <p class="courses__note reveal" data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Every online batch streams live with lifetime recorded access, doubt sessions &amp; a dedicated mentor — study from anywhere in India.
+        </p>
       </div>
     </section>
 
