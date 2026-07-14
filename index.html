@@ -519,6 +519,59 @@
   <!-- ============ FLOATING MOBILE CTA ============ -->
   <a href="#enquire" class="fab" id="fab">Enquire Now</a>
 
+  <!-- ============ ENROLL MODAL ============ -->
+  <div class="modal modal--form" id="enrollModal" aria-hidden="true">
+    <div class="modal__backdrop" data-eclose></div>
+    <div class="enroll-box" role="dialog" aria-modal="true" aria-labelledby="enrollTitle">
+      <button class="enroll-close" data-eclose aria-label="Close">×</button>
+      <div class="enroll-head">
+        <span class="eyebrow">Book a Free Demo</span>
+        <h3 id="enrollTitle">Enroll with Judiciary Gold</h3>
+        <p>Fill in your details and a mentor will call you within 24 hours to confirm your seat — no payment now.</p>
+      </div>
+      <form id="enrollForm" novalidate>
+        <div class="field">
+          <label for="e-name">Full Name</label>
+          <input type="text" id="e-name" name="name" placeholder="Your name" required />
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field">
+          <label for="e-phone">Phone Number</label>
+          <input type="tel" id="e-phone" name="phone" placeholder="10-digit mobile" required inputmode="numeric" maxlength="10" />
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field">
+          <label for="e-email">Email</label>
+          <input type="email" id="e-email" name="email" placeholder="you@email.com" required />
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field">
+          <label for="e-exam">Target Exam</label>
+          <select id="e-exam" name="exam" required>
+            <option value="">Select an exam</option>
+            <option>BPSC-J (Bihar)</option>
+            <option>RJS (Rajasthan)</option>
+            <option>HJS (Haryana)</option>
+            <option>MPCJ (Madhya Pradesh)</option>
+            <option>DJS (Delhi)</option>
+            <option>UPPSCJ (Uttar Pradesh)</option>
+            <option>CGPSC-J (Chhattisgarh)</option>
+            <option>Rajasthan APO</option>
+            <option>AIBE</option>
+            <option>Not sure yet</option>
+          </select>
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field field--full">
+          <label for="e-msg">Message <span class="muted">(optional)</span></label>
+          <textarea id="e-msg" name="message" rows="2" placeholder="Preferred batch, mode (online/offline) or any question"></textarea>
+        </div>
+        <button type="submit" class="btn btn--gold btn--lg btn--block">Submit &amp; Book My Seat</button>
+        <p class="form-success" id="enrollSuccess" hidden>🎉 Thank you! Your seat request is in — our team will call you within 24 hours. Welcome to the JGWay.</p>
+      </form>
+    </div>
+  </div>
+
   <!-- ============ VIDEO MODAL ============ -->
   <div class="modal" id="videoModal" aria-hidden="true">
     <div class="modal__backdrop" data-close></div>

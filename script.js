@@ -53,7 +53,7 @@
         </div>
         <div class="course__foot">
           <div class="course__price"><span class="course__price-label">Starts at</span><span class="course__price-val">${c.price}</span></div>
-          <a href="#enquire" class="btn btn--gold btn--sm">Enroll Now</a>
+          <button type="button" class="btn btn--gold btn--sm" data-enroll="${c.name} (${c.tag})" data-enroll-name="${c.name}">Enroll Now</button>
         </div>
       </article>`;
     }).join("");
@@ -234,34 +234,60 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeVideo(); });
   }
 
-  /* -------- Form validation + mock submit -------- */
-  const form = document.getElementById("enquiryForm");
-  const success = document.getElementById("formSuccess");
+  /* -------- Form validation + mock submit (shared) -------- */
   function setError(field, msg) {
     const wrap = field.closest(".field");
+    if (!wrap) return;
     const err = wrap.querySelector("[data-err]");
     wrap.classList.toggle("invalid", !!msg);
     if (err) err.textContent = msg || "";
   }
-  if (form) {
+  function wireForm(form, successEl) {
+    if (!form) return;
+    if (form.phone) form.phone.addEventListener("input", (e) => { e.target.value = e.target.value.replace(/\D/g, ""); });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let ok = true;
       const name = form.name, phone = form.phone, email = form.email, exam = form.exam;
-
       if (!name.value.trim()) { setError(name, "Please enter your name"); ok = false; } else setError(name, "");
       if (!/^\d{10}$/.test(phone.value.trim())) { setError(phone, "Enter a valid 10-digit number"); ok = false; } else setError(phone, "");
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setError(email, "Enter a valid email"); ok = false; } else setError(email, "");
       if (!exam.value) { setError(exam, "Please choose your target exam"); ok = false; } else setError(exam, "");
-
       if (!ok) return;
-      form.querySelectorAll(".field, .btn").forEach((el) => { if (el.classList.contains("field")) el.style.display = "none"; });
-      const btn = form.querySelector(".btn--block");
+      form.querySelectorAll(".field").forEach((el) => { el.style.display = "none"; });
+      const btn = form.querySelector('button[type="submit"]');
       if (btn) btn.style.display = "none";
-      if (success) success.hidden = false;
+      if (successEl) successEl.hidden = false;
     });
-    // allow only digits in phone
-    form.phone.addEventListener("input", (e) => { e.target.value = e.target.value.replace(/\D/g, ""); });
+  }
+  wireForm(document.getElementById("enquiryForm"), document.getElementById("formSuccess"));
+  wireForm(document.getElementById("enrollForm"), document.getElementById("enrollSuccess"));
+
+  /* -------- Enrollment popup -------- */
+  const enrollModal = document.getElementById("enrollModal");
+  const enrollForm = document.getElementById("enrollForm");
+  const enrollTitle = document.getElementById("enrollTitle");
+  function openEnroll(examVal, courseName) {
+    if (!enrollModal) return;
+    if (enrollTitle) enrollTitle.textContent = courseName ? ("Enroll in " + courseName) : "Book your free demo";
+    if (enrollForm && enrollForm.exam && examVal) enrollForm.exam.value = examVal;
+    enrollModal.classList.add("open");
+    enrollModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    const nm = enrollForm && enrollForm.name;
+    if (nm) setTimeout(() => { try { nm.focus(); } catch (e) {} }, 60);
+  }
+  function closeEnroll() {
+    if (!enrollModal) return;
+    enrollModal.classList.remove("open");
+    enrollModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+  document.querySelectorAll("[data-enroll]").forEach((btn) =>
+    btn.addEventListener("click", () => openEnroll(btn.dataset.enroll, btn.dataset.enrollName)));
+  if (enrollModal) {
+    enrollModal.querySelectorAll("[data-eclose]").forEach((el) => el.addEventListener("click", closeEnroll));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeEnroll(); });
   }
 
   /* -------- Init -------- */
